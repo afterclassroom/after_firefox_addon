@@ -1,0 +1,13 @@
+{
+    "name": "afteraddon", 
+    "license": "MPL 2.0", 
+    "author": "", 
+    "version": "0.1", 
+    "dependencies": [
+        "addon-kit", 
+        "toolbarbutton"
+    ], 
+    "fullName": "afterAddOn", 
+    "id": "jid1-6RdiI6sUNgpDCg", 
+    "description": "a basic add-on"
+}

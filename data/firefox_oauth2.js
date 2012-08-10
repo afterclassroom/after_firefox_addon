@@ -377,19 +377,14 @@ self.port.on("DisplayTagList", function(response) {
 });
 self.port.on("UpdateLinkInfo", function(response) {
     //get list of classroom tick to
-    console.log("response of updatelinkinfo == "+response);
-    console.log("response of updatelinkinfo == "+response);
-    console.log("response of updatelinkinfo == "+response);
     
 
     var objLink = jQuery.parseJSON(response).openstruct;
     if (objLink != undefined){
         if (objLink.title){
-            console.log("title of link == "+objLink.title);
             $('#title').attr("value",objLink.title);
         }
         if (objLink.description){
-            console.log("description of link == "+objLink.description);
             $('#description').html(objLink.description);
         }
         objLink.provider
@@ -432,7 +427,6 @@ self.port.on("DisplayUser", function(response) {
     var objUser = jQuery.parseJSON(response);
     $('#Useravatar').attr('src','http://dev.afterclassroom.com'+objUser.user.image);
     $('#usr_name').text(objUser.user.name);
-    console.log("Tai sao trong displayuser la.i ko load user name va image");
 });
 
 self.port.on("DisplayClassrooms", function(response) {
@@ -467,7 +461,6 @@ self.port.on("DisplayClassrooms", function(response) {
 });
 
 self.port.on("ResetOnHide", function(response) {
-    console.log("We will rock you to reset the panel");
     $('#Useravatar').attr('src','');
     $('#usr_name').text('');
     $('#cl_list').html(originClassList);

@@ -1,6 +1,8 @@
 var globCode;
 var originClassList;
 var originTag;
+var loading_image = ""
+var originDesc;
 
 //BEGIN CLASS OAUTH2===================================================================
 var OAuth2 = function(adapterName, config, callback) {
@@ -380,6 +382,7 @@ self.port.on("UpdateLinkInfo", function(response) {
     
 
     var objLink = jQuery.parseJSON(response).openstruct;
+    originDesc = $('#description').html();
     if (objLink != undefined){
         if (objLink.title){
             $('#title').attr("value",objLink.title);
@@ -468,4 +471,7 @@ self.port.on("ResetOnHide", function(response) {
     $('#tagHolder').html(originTag);
     $('#btn_send').text('Send');
     $('#btn_send').attr('disabled','');
+    $('#title').attr("value","");
+    $('#loading_id').attr('src',loading_image);
+    $('#description').html(originDesc);
 });

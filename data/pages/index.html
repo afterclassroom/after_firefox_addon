@@ -484,24 +484,21 @@
     </style>
 
     <body>
-        <div class="container">
-            <div class="row-fluid">
-                <div class="container" style="margin-top: 50px;width: 517px;height: 552px;background: #BCE8F1">
-                    <div style="margin-right:16px;margin-top: -20px;border-right: 10px solid transparent;border-left: 10px solid transparent;border-bottom: 20px solid #BCE8F1;float: right"></div>
+                <div class="container" style="width: 517px">                  
                     <div class="con-ticks" style="padding:5px 15px">
                         <div class="row-fluid">
-                            <div class="span6">
-                                <h2>Tick</h2>
-                            </div>
-                            <div class="span6">
-                                <div class="pull-right" style="margin-top: 10px">
-                                    <a href="http://afterclassroom.com">afterclassroom.com</a>
-                                </div>
-                            </div>
+                    <div class="span6" style="width: 237px;float:left">
+                        <h2>Tick</h2>
+                    </div>
+                    <div class="span6" style="width: 237px;float:left">
+                        <div class="pull-right" style="margin-top: 10px">
+                            <a href="http://afterclassroom.com" id="linkto_classroom">afterclassroom.com</a>
                         </div>
+                    </div>
+                </div>
                         <p></p>
                         <div class="row-fluid">
-                            <input type="text" placeholder="Title" class="span" id="title"/>
+                            <input type="text" placeholder="Title" class="span" id="title" style="width: 487px"/>
                         </div>
                         <div class="row-fluid">
                             <div style="width:485px;height: 310px;border: 1px solid #d4d4d4" id="description">
@@ -510,10 +507,11 @@
                         </div>
                         <p></p>
                         <div class="row-fluid" id="tagHolder">
-                            <input type="text" placeholder="Select tags" class="span" id="tags">
+                            <input type="text" placeholder="Select tags" class="span" id="tags" style="width: 487px">
                         </div>
+                        <p></p>
                         <div class="row-fluid">
-                            <div class="span6">
+                            <div class="span6" style="width: 385px;float:left">
                                 <div class="input-append" style="position: relative">
                                     <input type="text" placeholder="Select classrooms" class="span10" style="float:left"/>
                                     <button type="button" class="btn click-ctick" style="padding: 11px">
@@ -535,7 +533,7 @@
 
 
                             </div>
-                            <div class="span6">
+                            <div class="span6" style="width: 102px;float:left">
                                 <div class="pull-right">
                                     <button href="javascript:;" id="btn_send" class="btn" disabled style="padding: 4px 25px">Send</button>
                                 </div>
@@ -543,13 +541,13 @@
                         </div>
                         <p></p>
                         <div class="row-fluid">
-                            <div class="span6">
+                            <div class="span6" style="width: 237px;float:left">
                                 <span style="float: left;margin-right: 10px">
                                     <img id="Useravatar" src="" style="height: 50px;width: 50px;border-radius:6px">
                                 </span>
-                                <p style="margin-top: 35px" id="usr_name"></p>
+                                <p id="usr_name"></p>
                             </div>
-                            <div class="span6">
+                            <div class="span6" style="width: 237px;float:left">
                                 <div class="pull-right" style="margin-top: 35px">
                                     <a href="http://afterclassroom.com">My Ticks</a>
                                 </div>
@@ -557,8 +555,6 @@
                         </div>
                     </div>
                 </div><!--/span-->
-            </div><!--/row-->
-        </div>
 
 
 

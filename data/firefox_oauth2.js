@@ -376,6 +376,11 @@ self.port.on("DisplayTagList", function(response) {
     $('#tags').select2({
         tags: listTags
     });
+    
+    $('.select2-container').click(function(){
+      $('#tick_to_click').hide();
+    });
+
 });
 self.port.on("UpdateLinkInfo", function(response) {
     //get list of classroom tick to

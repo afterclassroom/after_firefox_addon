@@ -466,6 +466,10 @@ self.port.on("DisplayClassrooms", function(response) {
         timeout = setTimeout(hidepanel, 100);
     }
 
+    $('#title').click(function(){
+        hidepanel();
+    });
+
 });
 
 self.port.on("ResetOnHide", function(response) {

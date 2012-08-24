@@ -57,6 +57,7 @@ exports.ToolbarButton = function ToolbarButton(options) {
       if (options.image) tbb.setAttribute("image", options.image);
       tbb.setAttribute("class", "toolbarbutton-1 chromeclass-toolbar-additional");
       tbb.setAttribute("label", options.label);
+      tbb.setAttribute("tooltiptext", options.tooltiptext);
       tbb.addEventListener("command", function() {
         if (options.onCommand)
           options.onCommand({}); // TODO: provide something?

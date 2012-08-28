@@ -389,16 +389,6 @@ self.port.on("UpdateLinkInfo", function(response) {
     var objLink = jQuery.parseJSON(response).openstruct;
     originDesc = $('#description').html();
 
-    console.log('provider == ');
-    console.log('provider == ');
-    console.log('provider == ');
-    console.log('provider == ');
-    console.log('provider == v == ');
-    console.log('provider == v == '+objLink.provider);
-    console.log('image == a == ');
-    console.log('image == a == '+objLink.image);
-
-
     if (objLink != undefined){
 
         var strDescription = objLink.description;
@@ -412,10 +402,7 @@ self.port.on("UpdateLinkInfo", function(response) {
         if (objLink.title){
             $('#title').attr("value",objLink.title);
         }
-        console.log("Begin");
         if (objLink.description){
-            console.log("dsc == ");
-            console.log("dsc == "+objLink.description);
             $('#description').html(strDescription);
         } else {
             $('#description').html('');

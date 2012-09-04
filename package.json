@@ -1,5 +1,5 @@
 {
-    "name": "afteraddon", 
+    "name": "petick", 
     "license": "MPL 2.0", 
     "author": "", 
     "version": "0.1", 
@@ -7,7 +7,7 @@
         "addon-kit", 
         "toolbarbutton"
     ], 
-    "fullName": "afterAddOn", 
+    "fullName": "PeTickAddOn", 
     "id": "jid1-6RdiI6sUNgpDCg", 
-    "description": "a basic add-on"
+    "description": "Add on for PeSome"
 }

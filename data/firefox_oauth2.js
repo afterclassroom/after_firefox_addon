@@ -447,6 +447,11 @@ self.port.on("DisplayUser", function(response) {
     var objUser = jQuery.parseJSON(response);
     $('#Useravatar').attr('src','http://dev.afterclassroom.com'+objUser.user.image);
     $('#usr_name').text(objUser.user.name);
+    $('#mypost_btn').unbind();
+    $('#mypost_btn').click(function(){
+        $("#mypost_btn").attr("target","_blank");
+        $('#mypost_btn').attr('href','http://dev.afterclassroom.com/user_publics?id='+objUser.user.id);
+    });
 });
 
 self.port.on("DisplayClassrooms", function(response) {

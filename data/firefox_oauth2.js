@@ -450,7 +450,7 @@ self.port.on("DisplayUser", function(response) {
     $('#mypost_btn').unbind();
     $('#mypost_btn').click(function(){
         $("#mypost_btn").attr("target","_blank");
-        $('#mypost_btn').attr('href','http://dev.afterclassroom.com/user_publics?id='+objUser.user.id);
+        $('#mypost_btn').attr('href','http://dev.afterclassroom.com/my_posts');
     });
 });
 

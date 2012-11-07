@@ -358,8 +358,8 @@ self.port.on("initPanelEvent", function(objPanel) {
 
 
     var myclient = new OAuth2('after', {
-        client_id: 'c7c97349e6ef49912d87fb762023c3b2958fc6f559f73927b3cd0262dd1c8bd5',
-        client_secret: 'd8ce0fc0ba134424d8aa6c73d19637c0e5a61a59364849eab1e93d9c811b9ebb',
+        client_id: '54e6eec0cb350f056dd4b8881092a9ec',
+        client_secret: 'a2aed3d6591941df554bc7aa1bef33bc',
         api_scope: 'public'
     });
     myclient.authorize(function() {});
@@ -462,8 +462,8 @@ self.port.on("DisplayClassrooms", function(response) {
     originClassList = $('#cl_list').html();
     $.each(data, function(i, item) {
         var st = '<li><a href="#"><label class="checkbox"><input name="classroom_ids[]" value="' +
-        data[i].classroom.id + '" type="checkbox" /><span>' +
-        data[i].classroom.title + '</span></label></a></li>';
+        data[i].petopic.id + '" type="checkbox" /><span>' +
+        data[i].petopic.title + '</span></label></a></li>';
         cl_list.append(st);
     });
 

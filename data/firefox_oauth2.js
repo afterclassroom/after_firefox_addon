@@ -180,7 +180,7 @@ OAuth2.loadAdapter = function(adapterName, callback) {
    * @return {URL} URL to the page that returns the authorization code
    */
             authorizationCodeURL: function(config) {
-                return 'http://dev.afterclassroom.com/oauth/authorize?response_type=code&client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}'
+                return 'http://pesome.com/oauth/authorize?response_type=code&client_id={{CLIENT_ID}}&redirect_uri={{REDIRECT_URI}}&scope={{API_SCOPE}}'
                 .replace('{{CLIENT_ID}}', config.clientId)
                 .replace('{{REDIRECT_URI}}', this.redirectURL(config))
                 .replace('{{API_SCOPE}}', config.apiScope);
@@ -191,7 +191,7 @@ OAuth2.loadAdapter = function(adapterName, callback) {
    * script into
    */
             redirectURL: function(config) {
-                return 'http://dev.afterclassroom.com/robots.txt';
+                return 'http://pesome.com/robots.txt';
             },
 
             /**
@@ -213,7 +213,7 @@ OAuth2.loadAdapter = function(adapterName, callback) {
    * @return {URL} URL to the access token providing endpoint
    */
             accessTokenURL: function() {
-                return 'http://dev.afterclassroom.com/oauth/token';
+                return 'http://pesome.com/oauth/token';
             },
 
             /**
@@ -358,8 +358,8 @@ self.port.on("initPanelEvent", function(objPanel) {
 
 
     var myclient = new OAuth2('after', {
-        client_id: '54e6eec0cb350f056dd4b8881092a9ec',
-        client_secret: 'a2aed3d6591941df554bc7aa1bef33bc',
+        client_id: '7c355c76ed42df0d3a33b536a7962cd6',
+        client_secret: 'c29ae9f36234ed3e044e7fdfaa79a7f5',
         api_scope: 'public'
     });
     myclient.authorize(function() {});
@@ -445,12 +445,12 @@ self.port.on("UpdateLinkInfo", function(response) {
 
 self.port.on("DisplayUser", function(response) {
     var objUser = jQuery.parseJSON(response);
-    $('#Useravatar').attr('src','http://dev.afterclassroom.com'+objUser.user.image);
+    $('#Useravatar').attr('src','http://pesome.com'+objUser.user.image);
     $('#usr_name').text(objUser.user.name);
     $('#mypost_btn').unbind();
     $('#mypost_btn').click(function(){
         $("#mypost_btn").attr("target","_blank");
-        $('#mypost_btn').attr('href','http://dev.afterclassroom.com/my_posts');
+        $('#mypost_btn').attr('href','http://pesome.com/my_posts');
     });
 });
 

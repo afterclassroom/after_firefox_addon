@@ -1,8 +1,8 @@
 {
     "name": "petick", 
     "license": "MPL 2.0", 
-    "author": "", 
-    "version": "0.1", 
+    "author": "DatNT", 
+    "version": "0.1.1", 
     "dependencies": [
         "addon-kit", 
         "toolbarbutton"

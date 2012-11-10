@@ -2,7 +2,8 @@
     "name": "after_firefox_addon", 
     "license": "MPL 2.0", 
     "author": "", 
-    "version": "0.1", 
+    "version": "0.1",
+    "dependencies": ["addon-kit","api-utils","toolbarbutton"],
     "fullName": "after_firefox_addon", 
     "id": "jid1-t9AT1TnwWyrMcA", 
     "description": "a basic add-on"

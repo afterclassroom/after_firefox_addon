@@ -274,9 +274,11 @@ self.port.on("UpdateLinkInfo", function(response) {
         var provider = objLink.provider;
 	var image = objLink.image;
 
-	if (provider == undefined && image != undefined){
-		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
-	}
+//	if (provider == undefined && image != undefined){
+//		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
+//	}
+
+        strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
 
         if (objLink.title){
             $('#title').attr("value",objLink.title);

@@ -70,6 +70,27 @@ exports.main = function(options) {
 
     });
 
+    after_panel.port.on("callRequest", function(hopeObj) {
+        var items = hopeObj[0];
+        var myurl =  hopeObj[1];
+
+        var Request = require('request').Request;
+
+        Request({
+            url: myurl,
+            content: {
+                code: items['code'].split('&')[0],
+                client_id: items['client_id'],
+                client_secret: items['client_secret'],
+                redirect_uri: items['redirect_uri'],
+                grant_type: items['grant_type']
+            },
+            onComplete: function (response) {
+                authenticationToken = response.json.access_token;
+                GetLinkInfo();
+            }
+        }).post();
+    });
     function GetMe(){
         var Request1 = require('request').Request;
         Request1({
@@ -96,25 +117,10 @@ exports.main = function(options) {
             }
         }).get();
     }
-    function GetClassroomImMember(){
-        var Request2 = require('request').Request;
-        Request2({
-            url: "http://pesome.com/api/petopics/all_members",
-            headers: {
-                Authorization: 'Bearer ' + authenticationToken
-            },
-            onComplete: function (response1) {
-                after_panel.port.emit('DisplayClassrooms', response1.text);
-                btn.showPanel();
-            }
-        }).get();
-    }
     function GetLinkInfo(){
         GetMe();
         GetList();
         GetClassroomImMember();
-
-
         var Request2 = require('request').Request;
         Request2({
             url: "http://pesome.com/api/peticks/attach_link",
@@ -142,12 +148,27 @@ exports.main = function(options) {
             }
         }).post();
     }
-
-
+    function GetClassroomImMember(){
+        var Request2 = require('request').Request;
+        Request2({
+            url: "http://pesome.com/api/petopics/all_members",
+            headers: {
+                Authorization: 'Bearer ' + authenticationToken
+            },
+            onComplete: function (response1) {
+                after_panel.port.emit('DisplayClassrooms', response1.text);
+                btn.showPanel();
+            }
+        }).get();
+    }
     after_panel.port.on("SubmitLink", function(params_arr) {
         var Request = require('request').Request;
+
         Request({
             url: "http://pesome.com/api/peticks",
+            headers: {
+                Authorization: 'Bearer ' + authenticationToken
+            },
             content: {
                 title: params_arr[2],
                 petopic_ids: params_arr[0].toString(),
@@ -157,28 +178,6 @@ exports.main = function(options) {
             onComplete: function (response) {
                 //TODO:: hide panel
                 after_panel.hide();
-            }
-        }).post();
-    });
-
-    after_panel.port.on("callRequest", function(hopeObj) {
-        var items = hopeObj[0];
-        var myurl =  hopeObj[1];
-
-        var Request = require('request').Request;
-
-        Request({
-            url: myurl,
-            content: {
-                code: items['code'].split('&')[0],
-                client_id: items['client_id'],
-                client_secret: items['client_secret'],
-                redirect_uri: items['redirect_uri'],
-                grant_type: items['grant_type']
-            },
-            onComplete: function (response) {
-                authenticationToken = response.json.access_token;
-                GetLinkInfo();
             }
         }).post();
     });

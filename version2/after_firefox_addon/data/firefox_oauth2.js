@@ -257,6 +257,11 @@ self.port.on("ResetOnHide", function(response) {
 
 
 self.port.on("UpdateLinkInfo", function(response) {
+
+
+    console.log('value of response ==');
+    console.log('value of response == v= ');
+    console.log('value of response == v= '+response);
     //get list of classroom tick to
 
 
@@ -270,7 +275,7 @@ self.port.on("UpdateLinkInfo", function(response) {
 	var image = objLink.image;
 
 	if (provider == undefined && image != undefined){
-		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>' + strDescription;
+		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
 	}
 
         if (objLink.title){

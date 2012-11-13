@@ -260,14 +260,7 @@ self.port.on("ResetOnHide", function(response) {
 
 
 self.port.on("UpdateLinkInfo", function(response) {
-
-
-    console.log('value of response ==');
-    console.log('value of response == v= ');
-    console.log('value of response == v= '+response);
     //get list of classroom tick to
-
-
     var objLink = jQuery.parseJSON(response).openstruct;
     originDesc = $('#description').html();
 
@@ -276,15 +269,7 @@ self.port.on("UpdateLinkInfo", function(response) {
         var strDescription = objLink.description;
         var provider = objLink.provider;
         var image = objLink.image;
-
-        console.log('kiem tra du lieu provider :: ');
-        console.log('kiem tra du lieu provider :: v = ');
-        console.log('kiem tra du lieu provider :: v = '+objLink.provider);
-        
         var strTmp =  "";
-
-        console.log(' 1 ');
-        console.log('len == '+strDescription.split('<iframe').length);
 
         if ( strDescription.split('<iframe').length == 1 ) {
             strTmp = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
@@ -322,10 +307,7 @@ self.port.on("UpdateLinkInfo", function(response) {
             params_arr.push(cls_list);
             params_arr.push(tags);
             if (objLink.title){
-                console.log('text == '+$('#title').text());
-                console.log('value == '+$('#title').val());
                 params_arr.push($('#title').val());
-            //                params_arr.push(objLink.title);
             } else {
                 params_arr.push("No title");
             }

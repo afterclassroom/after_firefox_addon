@@ -213,10 +213,13 @@ self.port.on("DisplayClassrooms", function(response) {
     }
     
     $.each(data, function(i, item) {
-        var st = '<li><a href="#"><label class="checkbox"><input name="classroom_ids[]" value="' +
-        data[i].petopic.id + '" type="checkbox" /><span>' +
-        data[i].petopic.title + '</span></label></a></li>';
-        cl_list.append(st);
+
+        if (data[i].petopic.title != undefined){//fix bug 2220
+            var st = '<li><a href="#"><label class="checkbox"><input name="classroom_ids[]" value="' +
+            data[i].petopic.id + '" type="checkbox" /><span>' +
+            data[i].petopic.title + '</span></label></a></li>';
+            cl_list.append(st);
+        }
     });
 
     $('.click-ctick').unbind();
@@ -272,7 +275,7 @@ self.port.on("UpdateLinkInfo", function(response) {
 
         var strDescription = objLink.description;
         var provider = objLink.provider;
-	var image = objLink.image;
+        var image = objLink.image;
 
         console.log('kiem tra du lieu provider :: ');
         console.log('kiem tra du lieu provider :: v = ');
@@ -322,7 +325,7 @@ self.port.on("UpdateLinkInfo", function(response) {
                 console.log('text == '+$('#title').text());
                 console.log('value == '+$('#title').val());
                 params_arr.push($('#title').val());
-//                params_arr.push(objLink.title);
+            //                params_arr.push(objLink.title);
             } else {
                 params_arr.push("No title");
             }

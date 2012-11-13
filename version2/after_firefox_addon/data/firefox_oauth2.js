@@ -291,12 +291,6 @@ self.port.on("UpdateLinkInfo", function(response) {
         }
 
 
-//	if (provider === undefined && image != undefined){
-//		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
-//	}
-
-//        strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
-
         if (objLink.title){
             $('#title').attr("value",objLink.title);
         }
@@ -325,7 +319,10 @@ self.port.on("UpdateLinkInfo", function(response) {
             params_arr.push(cls_list);
             params_arr.push(tags);
             if (objLink.title){
-                params_arr.push(objLink.title);
+                console.log('text == '+$('#title').text());
+                console.log('value == '+$('#title').val());
+                params_arr.push($('#title').val());
+//                params_arr.push(objLink.title);
             } else {
                 params_arr.push("No title");
             }

@@ -274,17 +274,34 @@ self.port.on("UpdateLinkInfo", function(response) {
         var provider = objLink.provider;
 	var image = objLink.image;
 
-//	if (provider == undefined && image != undefined){
+        console.log('kiem tra du lieu provider :: ');
+        console.log('kiem tra du lieu provider :: v = ');
+        console.log('kiem tra du lieu provider :: v = '+objLink.provider);
+        
+        var strTmp =  "";
+
+        console.log(' 1 ');
+        console.log('len == '+strDescription.split('<iframe').length);
+
+        if ( strDescription.split('<iframe').length == 1 ) {
+            strTmp = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
+            strTmp = strTmp + strDescription;
+        } else {
+            strTmp = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 290px;width: 290px"></span>';
+        }
+
+
+//	if (provider === undefined && image != undefined){
 //		strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
 //	}
 
-        strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
+//        strDescription = '<span style="float: left;margin-right: 10px"><img src="' + image + '" style="height: 145px;width: 145px"></span>';
 
         if (objLink.title){
             $('#title').attr("value",objLink.title);
         }
         if (objLink.description){
-            $('#description').html(strDescription);
+            $('#description').html(strTmp);
         } else {
             $('#description').html('');
         }

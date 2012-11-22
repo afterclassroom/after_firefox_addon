@@ -2,8 +2,9 @@
     "name": "pesome", 
     "license": "MPL 2.0", 
     "author": "", 
-    "version": "0.1", 
+    "version": "3.0",
     "fullName": "pesome", 
+    "dependencies": ["addon-kit","api-utils","toolbarbutton"],
     "id": "jid1-p3elT3XjDonTvg", 
     "description": "a basic add-on"
 }

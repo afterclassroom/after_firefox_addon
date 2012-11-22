@@ -34,8 +34,9 @@ exports.main = function(options) {
         image: data.url('img/icon_16.png'),
         panel: after_panel,
         onCommand: function() {
+            btn.showPanel();
             //after_panel.port.emit('beginOauth', null);
-            activeUrl = require("tabs").activeTab.url;
+//            activeUrl = require("tabs").activeTab.url;
         }
     });
     if (options.loadReason === "startup") {

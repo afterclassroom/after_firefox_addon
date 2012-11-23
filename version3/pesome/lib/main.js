@@ -5,7 +5,6 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-    var authenticationToken = undefined;
     var loadingImg = "";
     var URL = 'http://localhost:3000';
 
@@ -24,6 +23,7 @@ exports.main = function(options) {
         //        ,data.url("bootstrap-modal.js")
         ],
         onShow: function() {
+            activeUrl = require("tabs").activeTab.url;
             PesomeInit();
         },
         onHide: function() {
@@ -49,10 +49,6 @@ exports.main = function(options) {
         });
     }
     after_panel.port.on("SignIn", function(params_arr) {
-        console.log('begin to submit sign in');
-        console.log('action la == '+params_arr[0]);
-        console.log('name == '+params_arr[1]);
-        console.log('word == '+params_arr[2]);
         var Request = require('request').Request;
 
         Request({
@@ -61,7 +57,8 @@ exports.main = function(options) {
                 user: {
                     email: params_arr[1],
                     password: params_arr[2]
-                }
+                },
+                link: activeUrl
             },
             onComplete: function (response) {
                 //TODO:: hide panel

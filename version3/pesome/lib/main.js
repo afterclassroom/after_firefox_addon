@@ -48,13 +48,28 @@ exports.main = function(options) {
             forceMove: false //only move from palette
         });
     }
+    after_panel.port.on("SignIn", function(str_action) {
+        console.log('begin to submit sign in');
+        console.log('action la == '+str_action);
+        var Request = require('request').Request;
+
+        Request({
+            url: str_action,
+            content: {
+            },
+            onComplete: function (response) {
+                //TODO:: hide panel
+                alert('submit xong')
+            }
+        }).post();
+    });
+    
     function PesomeInit(){
         var Request1 = require('request').Request;
         Request1({
             url: URL + '/extensions/attach_link',
             onComplete: function (response1) {
                 after_panel.port.emit('InitContent', response1.text);
-                console.log('response text == '+response1.text);
             }
         }).get();
     }

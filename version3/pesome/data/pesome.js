@@ -44,12 +44,13 @@ self.port.on("AfterSignin", function(response) {
     //END: handler for select2 of tags
 
     var str_action = $('#main_panel').find('#form_tick').attr('action');
-    console.log('action tick == ');
-    console.log('action tick == '+str_action);
-    
-    console.log('test btn');
     $('#main_panel').find('#sub_tick').click(function(){
-        self.port.emit('SubmitTick', '123456');
+        var cls_list = [];
+        $('input[name="classroom_ids[]"]:checked').each(function(i){
+            cls_list.push($(this).val());
+        });
+        
+        self.port.emit('SubmitTick', cls_list);
     });
     $('#main_panel').css('display','');
 });

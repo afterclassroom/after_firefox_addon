@@ -70,6 +70,7 @@ exports.main = function(options) {
     after_panel.port.on("SubmitTick", function(params_arr) {
         var Request = require('request').Request;
         console.log('EVENT SUBMIT TICK');
+        console.log('EVENT SUBMIT TICK v= '+params_arr);
 
 //        Request({
 //            url: params_arr[0],

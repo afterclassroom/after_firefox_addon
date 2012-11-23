@@ -74,20 +74,18 @@ exports.main = function(options) {
         console.log('EVENT SUBMIT TICK tags= '+params_arr[1]);
         console.log('EVENT SUBMIT TICK title= '+params_arr[2]);
 
-//        Request({
-//            url: params_arr[0],
-//            content: {
-//                user: {
-//                    email: params_arr[1],
-//                    password: params_arr[2]
-//                },
-//                link: activeUrl
-//            },
-//            onComplete: function (response) {
-//                //TODO:: hide panel
-//                after_panel.port.emit('AfterSignin', response.text);
-//            }
-//        }).post();
+        Request({
+            url: params_arr[3],
+            content: {
+                classroom_ids: params_arr[0],
+                tags: params_arr[1],
+                classroom_ids: params_arr[2]
+            },
+            onComplete: function (response) {
+                //TODO:: hide panel
+                after_panel.hide();
+            }
+        }).post();
     });
 
     function PesomeInit(){

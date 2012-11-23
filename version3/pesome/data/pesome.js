@@ -59,7 +59,7 @@ self.port.on("AfterSignin", function(response) {
         } else {
             params_arr.push("No title");
         }
-        
+        params_arr.push(str_action);
         self.port.emit('SubmitTick', params_arr);
     });
     $('#main_panel').css('display','');

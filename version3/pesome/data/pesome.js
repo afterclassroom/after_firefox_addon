@@ -17,3 +17,6 @@ self.port.on("InitContent", function(response) {
     });
     $('#main_panel').css('display','');
 });
+self.port.on("AfterSignin", function(response) {
+    console.log('after signin');
+});

@@ -55,15 +55,19 @@ exports.main = function(options) {
         console.log('word == '+params_arr[2]);
         var Request = require('request').Request;
 
-//        Request({
-//            url: params_arr[0],
-//            content: {
-//            },
-//            onComplete: function (response) {
-//                //TODO:: hide panel
-//                alert('submit xong')
-//            }
-//        }).post();
+        Request({
+            url: params_arr[0],
+            content: {
+                user: {
+                    email: params_arr[1],
+                    password: params_arr[2]
+                }
+            },
+            onComplete: function (response) {
+                //TODO:: hide panel
+                after_panel.port.emit('AfterSignin', response.text);
+            }
+        }).post();
     });
     
     function PesomeInit(){

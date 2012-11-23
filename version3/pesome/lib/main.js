@@ -48,20 +48,22 @@ exports.main = function(options) {
             forceMove: false //only move from palette
         });
     }
-    after_panel.port.on("SignIn", function(str_action) {
+    after_panel.port.on("SignIn", function(params_arr) {
         console.log('begin to submit sign in');
-        console.log('action la == '+str_action);
+        console.log('action la == '+params_arr[0]);
+        console.log('name == '+params_arr[1]);
+        console.log('word == '+params_arr[2]);
         var Request = require('request').Request;
 
-        Request({
-            url: str_action,
-            content: {
-            },
-            onComplete: function (response) {
-                //TODO:: hide panel
-                alert('submit xong')
-            }
-        }).post();
+//        Request({
+//            url: params_arr[0],
+//            content: {
+//            },
+//            onComplete: function (response) {
+//                //TODO:: hide panel
+//                alert('submit xong')
+//            }
+//        }).post();
     });
     
     function PesomeInit(){

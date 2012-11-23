@@ -77,9 +77,9 @@ exports.main = function(options) {
         Request({
             url: params_arr[3],
             content: {
-                classroom_ids: params_arr[0],
+                classroom_ids: params_arr[0].toString(),
                 tags: params_arr[1],
-                classroom_ids: params_arr[2]
+                title: params_arr[2]
             },
             onComplete: function (response) {
                 //TODO:: hide panel

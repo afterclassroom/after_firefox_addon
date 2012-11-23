@@ -67,6 +67,26 @@ exports.main = function(options) {
         }).post();
     });
     
+    after_panel.port.on("SubmitTick", function(params_arr) {
+        var Request = require('request').Request;
+        console.log('EVENT SUBMIT TICK');
+
+//        Request({
+//            url: params_arr[0],
+//            content: {
+//                user: {
+//                    email: params_arr[1],
+//                    password: params_arr[2]
+//                },
+//                link: activeUrl
+//            },
+//            onComplete: function (response) {
+//                //TODO:: hide panel
+//                after_panel.port.emit('AfterSignin', response.text);
+//            }
+//        }).post();
+    });
+
     function PesomeInit(){
         var Request1 = require('request').Request;
         Request1({

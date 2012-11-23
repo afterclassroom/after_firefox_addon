@@ -43,6 +43,13 @@ self.port.on("AfterSignin", function(response) {
     }
     //END: handler for select2 of tags
 
+    var str_action = $('#main_panel').find('#form_tick').attr('action');
+    console.log('action tick == ');
+    console.log('action tick == '+str_action);
+    
+    console.log('test btn');
+    $('#main_panel').find('#sub_tick').click(function(){
+        self.port.emit('SubmitTick', '123456');
+    });
     $('#main_panel').css('display','');
-
 });

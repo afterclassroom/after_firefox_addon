@@ -46,11 +46,15 @@ self.port.on("AfterSignin", function(response) {
     var str_action = $('#main_panel').find('#form_tick').attr('action');
     $('#main_panel').find('#sub_tick').click(function(){
         var cls_list = [];
+        var params_arr = [];
         $('input[name="classroom_ids[]"]:checked').each(function(i){
             cls_list.push($(this).val());
         });
+        var tags = $('#tags').val();
+        params_arr.push(cls_list);
+        params_arr.push(tags);
         
-        self.port.emit('SubmitTick', cls_list);
+        self.port.emit('SubmitTick', params_arr);
     });
     $('#main_panel').css('display','');
 });

@@ -18,8 +18,8 @@ exports.main = function(options) {
         contentURL: data.url("pages/index.html"),
         contentScriptFile: [data.url("jquery-1.7.1.min.js")
         ,data.url("pesome.js")
+        ,data.url("select2.js")
         //        ,data.url("firefox_oauth2.js")
-        //        ,data.url("select2.js")
         //        ,data.url("bootstrap-modal.js")
         ],
         onShow: function() {

@@ -17,9 +17,9 @@ self.port.on("InitContent", function(response) {
 
 self.port.on("AfterSignin", function(response) {
     $('#main_panel').html(response);
+    //BEGIN: handler for petopics list
     
     var timeout;
-
     function hidepanel() {
         $('#main_panel').find('#tick_to_click').hide();
     }
@@ -32,9 +32,16 @@ self.port.on("AfterSignin", function(response) {
         clearTimeout(timeout);
         $('#main_panel').find("#tick_to_click").show();
     });
-    
     $('#main_panel').find('#tick_to_click').mouseleave(doTimeout);
+    //END: handler for petopics list
+    //BEGIN: handler for select2 of tags
 
+    if ($('#main_panel').find("#tags").length > 0) {
+        $('#main_panel').find("#tags").select2({
+            tags : $('#main_panel').find('#tag_list').val().split(',')
+        });
+    }
+    //END: handler for select2 of tags
 
     $('#main_panel').css('display','');
 

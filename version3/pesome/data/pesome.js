@@ -32,6 +32,9 @@ self.port.on("AfterSignin", function(response) {
         clearTimeout(timeout);
         $('#main_panel').find("#tick_to_click").show();
     });
+    
+    $('#main_panel').find('#tick_to_click').mouseleave(doTimeout);
+
 
     $('#main_panel').css('display','');
 

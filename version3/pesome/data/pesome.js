@@ -54,6 +54,12 @@ self.port.on("AfterSignin", function(response) {
         params_arr.push(cls_list);
         params_arr.push(tags);
         
+        if ($('#main_panel').find('#title').val() != '' ){
+            params_arr.push($('#title').val());
+        } else {
+            params_arr.push("No title");
+        }
+        
         self.port.emit('SubmitTick', params_arr);
     });
     $('#main_panel').css('display','');

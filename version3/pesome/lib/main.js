@@ -72,6 +72,7 @@ exports.main = function(options) {
         console.log('EVENT SUBMIT TICK');
         console.log('EVENT SUBMIT TICK clas= '+params_arr[0]);
         console.log('EVENT SUBMIT TICK tags= '+params_arr[1]);
+        console.log('EVENT SUBMIT TICK title= '+params_arr[2]);
 
 //        Request({
 //            url: params_arr[0],

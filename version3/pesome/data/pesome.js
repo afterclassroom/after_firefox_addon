@@ -16,7 +16,23 @@ self.port.on("InitContent", function(response) {
 });
 
 self.port.on("AfterSignin", function(response) {
-    console.log('after signin');
     $('#main_panel').html(response);
+    
+    var timeout;
+
+    function hidepanel() {
+        $('#main_panel').find('#tick_to_click').hide();
+    }
+
+    function doTimeout() {
+        clearTimeout(timeout);
+        timeout = setTimeout(hidepanel, 100);
+    }
+    $('#main_panel').find('.click-ctick').click(function() {
+        clearTimeout(timeout);
+        $('#main_panel').find("#tick_to_click").show();
+    });
+
     $('#main_panel').css('display','');
+
 });

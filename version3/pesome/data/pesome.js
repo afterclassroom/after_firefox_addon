@@ -1,4 +1,9 @@
 self.port.on("InitContent", function(response) {
+    console.log('init content again');
+    console.log('init content again');
+    console.log('init content again');
+    console.log('init content again');
+    console.log('init content again');
     var params_arr = [];
     $('#main_panel').html(response);
     var str_action = $(response).find('#form_signin').attr('action');
@@ -14,6 +19,7 @@ self.port.on("InitContent", function(response) {
     });
     $('#main_panel').css('display','');
 });
+
 
 self.port.on("AfterSignin", function(response) {
     $('#main_panel').html(response);
@@ -71,3 +77,7 @@ self.port.on("AfterSignin", function(response) {
     $('#main_panel').css('display','');
 });
 
+
+self.port.on("ResetPage", function(response) {
+   $('#main_panel').css('display','none');
+});

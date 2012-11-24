@@ -24,14 +24,11 @@ exports.main = function(options) {
         
         ],
         onShow: function() {
-            console.log('show again');
-            console.log('show again');
-            console.log('show again');
             activeUrl = require("tabs").activeTab.url;
-            console.log('active URL == '+activeUrl);
             PesomeInit();
         },
         onHide: function() {
+            after_panel.port.emit('ResetPage', null);
         }
     });
 

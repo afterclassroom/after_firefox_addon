@@ -1,30 +1,45 @@
 self.port.on("InitContent", function(response) {
-    console.log('init content again');
-    console.log('init content again');
-    console.log('init content again');
-    console.log('init content again');
-    console.log('init content again');
     var params_arr = [];
     $('#main_panel').html(response);
     var str_action = $(response).find('#form_signin').attr('action');
-    
-    params_arr.push(str_action);
 
-    $('#main_panel').find('#btn_sign_in').click(function(){
-        params_arr.push($('#main_panel').find('#user_email').val());
-        params_arr.push($('#main_panel').find('#user_password').val());
-        $('#main_panel').css('display','none');
+    console.log('action == ');
+    console.log('action == '+str_action);
 
-        self.port.emit('SignIn', params_arr);
-    });
-    $('#main_panel').css('display','');
+    if (str_action == undefined){
+        console.log('co the post link duoc');
+        console.log('co the post link duoc');
+        console.log('co the post link duoc');
+        PostLinkHandler(response);
+    }else {
+        params_arr.push(str_action);
+
+        $('#main_panel').find('#btn_sign_in').click(function(){
+            params_arr.push($('#main_panel').find('#user_email').val());
+            params_arr.push($('#main_panel').find('#user_password').val());
+            $('#main_panel').css('display','none');
+
+            self.port.emit('SignIn', params_arr);
+        });
+        $('#main_panel').css('display','');
+    }
 });
 
 
 self.port.on("AfterSignin", function(response) {
+    PostLinkHandler(response);
+});
+
+
+self.port.on("ResetPage", function(response) {
+    $('#main_panel').css('display','none');
+});
+
+function PostLinkHandler(response){
+
     $('#main_panel').html(response);
     //BEGIN: handler for petopics list
-    
+
     var timeout;
     function hidepanel() {
         $('#main_panel').find('#tick_to_click').hide();
@@ -72,12 +87,8 @@ self.port.on("AfterSignin", function(response) {
         }else {
             $('#alertModal').modal('show');
         }
-        //END validation for valid form before submit
+    //END validation for valid form before submit
     });
     $('#main_panel').css('display','');
-});
 
-
-self.port.on("ResetPage", function(response) {
-   $('#main_panel').css('display','none');
-});
+}

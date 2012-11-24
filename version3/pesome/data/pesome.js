@@ -9,13 +9,8 @@ self.port.on("InitContent", function(response) {
     $('#main_panel').html(response);
     var str_action = $(response).find('#form_signin').attr('action');
 
-    console.log('action == ');
-    console.log('action == '+str_action);
 
     if (str_action == undefined){
-        console.log('co the post link duoc');
-        console.log('co the post link duoc');
-        console.log('co the post link duoc');
         PostLinkHandler(response);
     }else {
         params_arr.push(str_action);
@@ -23,7 +18,7 @@ self.port.on("InitContent", function(response) {
         $('#main_panel').find('#btn_sign_in').click(function(){
             params_arr.push($('#main_panel').find('#user_email').val());
             params_arr.push($('#main_panel').find('#user_password').val());
-            $('#main_panel').css('display','none');
+            $('#main_panel').html(loading_Image);
 
             self.port.emit('SignIn', params_arr);
         });

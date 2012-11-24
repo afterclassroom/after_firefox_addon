@@ -64,7 +64,7 @@ exports.ToolbarButton = function ToolbarButton(options) {
 
         if (options.panel) {
           //options.panel.show(tbb);DATNT comment this
-          options.panel.port.emit('initPanelEvent', null);//DATNT assign this event
+          //options.panel.port.emit('initPanelEvent', null);//DATNT assign this event
         }
       }, true);
       globalTBB = tbb;//DATNT assign this

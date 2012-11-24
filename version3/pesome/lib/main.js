@@ -28,6 +28,7 @@ exports.main = function(options) {
             console.log('show again');
             console.log('show again');
             activeUrl = require("tabs").activeTab.url;
+            console.log('active URL == '+activeUrl);
             PesomeInit();
         },
         onHide: function() {
@@ -98,7 +99,7 @@ exports.main = function(options) {
     function PesomeInit(){
         var Request1 = require('request').Request;
         Request1({
-            url: URL + '/extensions/attach_link',
+            url: URL + '/extensions/attach_link?link='+activeUrl,
             onComplete: function (response1) {
                 after_panel.port.emit('InitContent', response1.text);
             }

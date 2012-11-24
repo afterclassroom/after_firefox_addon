@@ -38,6 +38,14 @@ self.port.on("ResetPage", function(response) {
 
 self.port.on("AfterCreate", function(response) {
     $('#main_panel').html(response);
+    //BEGIN link SIGNOUT handler
+    var str_link =  $('#main_panel').find('.signout').attr('href');
+    $('#main_panel').find('.signout').attr('href','javascript:;');
+
+    $('#main_panel').find('.signout').click(function(){
+        self.port.emit('SignOut', str_link);
+    });
+    //END link SIGNOUT handler
 });
 
 function PostLinkHandler(response){
@@ -102,9 +110,6 @@ function PostLinkHandler(response){
     $('#main_panel').find('.signout').attr('href','javascript:;');
 
     $('#main_panel').find('.signout').click(function(){
-        console.log('sign url == ');
-        console.log('sign url == '+str_link);
-        console.log('ole url == '+$('#main_panel').find('.signout').attr('href'));
         self.port.emit('SignOut', str_link);
     });
     //END link SIGNOUT handler

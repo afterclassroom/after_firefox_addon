@@ -64,3 +64,4 @@ self.port.on("AfterSignin", function(response) {
     });
     $('#main_panel').css('display','');
 });
+

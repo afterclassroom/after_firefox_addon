@@ -62,7 +62,15 @@ exports.main = function(options) {
             },
             onComplete: function (response) {
                 //TODO:: hide panel
-                after_panel.port.emit('AfterSignin', response.text);
+                if ( response.text.indexOf('id="flash_error"') > 0 ){
+                    //Generate event InitContent apply for Form Signin
+                    after_panel.port.emit('InitContent', response.text);
+                }else {
+                    after_panel.port.emit('AfterSignin', response.text);
+                }
+
+                
+
             }
         }).post();
     });

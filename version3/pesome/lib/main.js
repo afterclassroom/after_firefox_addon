@@ -28,6 +28,10 @@ exports.main = function(options) {
             PesomeInit();
         },
         onHide: function() {
+            console.log('ONHIDE EVENT');
+            console.log('ONHIDE EVENT');
+            console.log('ONHIDE EVENT');
+            console.log('ONHIDE EVENT');
             after_panel.port.emit('ResetPage', null);
         }
     });
@@ -77,6 +81,20 @@ exports.main = function(options) {
         }).post();
     });
     
+    after_panel.port.on("SignOut", function(signout_url) {
+        console.log('SING OUT EVENT');
+        console.log('SING OUT EVENT');
+        console.log('SING OUT EVENT');
+        console.log('SING OUT EVENT');
+        var Request = require('request').Request;
+        Request({
+            url: signout_url,
+            onComplete: function (response) {
+                PesomeInit();
+            }
+        }).get();
+    });
+
     after_panel.port.on("SubmitTick", function(params_arr) {
         var Request = require('request').Request;
         Request({

@@ -89,6 +89,20 @@ function PostLinkHandler(response){
         }
     //END validation for valid form before submit
     });
+    
+    //BEGIN link SIGNOUT handler
+    var str_link =  $('#main_panel').find('.signout').attr('href');
+    $('#main_panel').find('.signout').attr('href','javascript:;');
+
+    $('#main_panel').find('.signout').click(function(){
+        console.log('sign url == ');
+        console.log('sign url == '+str_link);
+        console.log('ole url == '+$('#main_panel').find('.signout').attr('href'));
+        self.port.emit('SignOut', str_link);
+    });
+    //END link SIGNOUT handler
+
+    
     $('#main_panel').css('display','');
 
 }

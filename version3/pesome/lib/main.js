@@ -5,12 +5,10 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-    var loadingImg = "";
     var URL = 'http://localhost:3000';
 
 
 
-    loadingImg = data.url("loading.gif");
 
     var after_panel = require("panel").Panel({
         width: 565,
@@ -28,10 +26,6 @@ exports.main = function(options) {
             PesomeInit();
         },
         onHide: function() {
-            console.log('ONHIDE EVENT');
-            console.log('ONHIDE EVENT');
-            console.log('ONHIDE EVENT');
-            console.log('ONHIDE EVENT');
             after_panel.port.emit('ResetPage', null);
         }
     });
@@ -113,6 +107,7 @@ exports.main = function(options) {
     });
 
     function PesomeInit(){
+        
         var Request1 = require('request').Request;
         Request1({
             url: URL + '/extensions/attach_link?link='+activeUrl,

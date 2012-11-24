@@ -1,4 +1,10 @@
+var loading_Image = '<img src="../img/loading.gif" />';
+
 self.port.on("InitContent", function(response) {
+    $('#main_panel').html(loading_Image);
+
+    $('#main_panel').css('display','');
+
     var params_arr = [];
     $('#main_panel').html(response);
     var str_action = $(response).find('#form_signin').attr('action');
@@ -21,7 +27,7 @@ self.port.on("InitContent", function(response) {
 
             self.port.emit('SignIn', params_arr);
         });
-        $('#main_panel').css('display','');
+
     }
 });
 
@@ -87,6 +93,8 @@ function PostLinkHandler(response){
                 params_arr.push("No title");
             }
             params_arr.push(str_action);
+            //LOADING WAIT...
+            $('#main_panel').html(loading_Image);
             self.port.emit('SubmitTick', params_arr);
         }else {
             $('#alertModal').modal('show');

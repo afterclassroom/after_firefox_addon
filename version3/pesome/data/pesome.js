@@ -35,6 +35,10 @@ self.port.on("ResetPage", function(response) {
     $('#main_panel').css('display','none');
 });
 
+self.port.on("AfterCreate", function(response) {
+    $('#main_panel').html(response);
+});
+
 function PostLinkHandler(response){
 
     $('#main_panel').html(response);

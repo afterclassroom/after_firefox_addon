@@ -106,7 +106,8 @@ exports.main = function(options) {
             },
             onComplete: function (response) {
                 //TODO:: hide panel
-                after_panel.hide();
+                //after_panel.hide();
+                after_panel.port.emit('AfterCreate', response.text);
             }
         }).post();
     });

@@ -15,7 +15,8 @@ self.port.on("InitContent", function(response) {
     }else {
         params_arr.push(str_action);
 
-        $('#main_panel').find('#btn_sign_in').click(function(){
+//        $('#main_panel').find('#btn_sign_in').click(function(){
+        $('#main_panel').find('.btn-signin').click(function(){
             params_arr.push($('#main_panel').find('#user_email').val());
             params_arr.push($('#main_panel').find('#user_password').val());
             $('#main_panel').html(loading_Image);
@@ -78,7 +79,7 @@ function PostLinkHandler(response){
     //END: handler for select2 of tags
 
     var str_action = $('#main_panel').find('#form_tick').attr('action');
-    $('#main_panel').find('#sub_tick').click(function(){
+    $('#main_panel').find('#send_bt').click(function(){
         //BEGIN validation for valid form before submit
         if ( $('input[name="classroom_ids[]"]:checked').length > 0 ){
             var cls_list = [];

@@ -5,7 +5,8 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-    var URL = 'http://localhost:3000';
+//    var URL = 'http://localhost:3000';
+    var URL = 'http://dev.afterclassroom.com';
 
 
 
@@ -76,10 +77,6 @@ exports.main = function(options) {
     });
     
     after_panel.port.on("SignOut", function(signout_url) {
-        console.log('SING OUT EVENT');
-        console.log('SING OUT EVENT');
-        console.log('SING OUT EVENT');
-        console.log('SING OUT EVENT');
         var Request = require('request').Request;
         Request({
             url: signout_url,

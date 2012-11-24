@@ -46,11 +46,7 @@ self.port.on("AfterSignin", function(response) {
     var str_action = $('#main_panel').find('#form_tick').attr('action');
     $('#main_panel').find('#sub_tick').click(function(){
         //BEGIN validation for valid form before submit
-        console.log("BEGIN validateion");
-        console.log("BEGIN validateion");
-        console.log("BEGIN validateion");
         if ( $('input[name="classroom_ids[]"]:checked').length > 0 ){
-            console.log('co select classroom')
             var cls_list = [];
             var params_arr = [];
             $('input[name="classroom_ids[]"]:checked').each(function(i){
@@ -68,9 +64,6 @@ self.port.on("AfterSignin", function(response) {
             params_arr.push(str_action);
             self.port.emit('SubmitTick', params_arr);
         }else {
-            console.log('ko HOP LE');
-            console.log('ko HOP LE');
-            console.log('ko HOP LE');
             $('#alertModal').modal('show');
         }
         //END validation for valid form before submit

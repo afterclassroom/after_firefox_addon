@@ -23,6 +23,7 @@ exports.main = function(options) {
         
         ],
         onShow: function() {
+            after_panel.port.emit('ResetPage', null);
             activeUrl = require("tabs").activeTab.url;
             PesomeInit();
         },

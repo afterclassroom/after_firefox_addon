@@ -35,6 +35,7 @@ self.port.on("AfterSignin", function(response) {
 
 self.port.on("ResetPage", function(response) {
     $('#main_panel').css('display','none');
+    $('#main_panel').html(loading_Image);
 });
 
 self.port.on("AfterCreate", function(response) {

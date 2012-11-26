@@ -14,7 +14,7 @@ exports.main = function(options) {
 
     var after_panel = require("panel").Panel({
         width: 565,
-        height: 580,
+        height: 620,
         contentURL: data.url("pages/index.html"),
         contentScriptFile: [data.url("jquery-1.7.1.min.js")
         ,data.url("pesome.js")

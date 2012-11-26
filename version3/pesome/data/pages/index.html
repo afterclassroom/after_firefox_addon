@@ -467,8 +467,14 @@
         /* end multiselect */
     </style>
     <style>
+#form_tick h2{
+font-size:13px;
+}
+	.caret{
+	    padding:1px;
+	}
         .con-ticks a{
-            text-decoration: underline;
+            text-decoration: none;
             font-weight: bold;
         }
         .con-ticks .dropdown-menu{description
@@ -482,6 +488,14 @@
         .con-ticks .dropdown-menu span{
             line-height: 21px;
             white-space: normal;
+	    word-wrap: break-word;
+        }
+	.img-extension img{
+            height: 43px;
+            border-radius:5px;
+        }
+        .ex-row a:hover{
+            text-decoration: none;
         }
         .embed-container {
             position: relative;
@@ -501,11 +515,12 @@
     </style>
 
     <body>
+
         <div class="container" style="width: 517px; display: none;" id="main_panel">
             <div class="con-ticks" style="padding:5px 15px">
                 <div class="row-fluid">
                     <div class="span6" style="width: 237px;float:left">
-                        <h2>PeTick</h2>
+                        PeTick
                     </div>
                     <div class="span6" style="width: 237px;float:left">
                         <div class="pull-right" style="margin-top: 10px">
@@ -531,7 +546,7 @@
                     <div class="span6" style="width: 385px;float:left">
                         <div class="input-append" style="position: relative">
                             <input type="text" placeholder="Select petopic" class="span12" style="width: 336px;float:left"/>
-                            <button type="button" class="btn click-ctick" style="padding: 12px">
+                            <button type="button" class="btn click-ctick" style="padding: 11px">
                                 <span class="caret" style="margin-top: 0px"></span>
                             </button>
                         </div>
@@ -551,8 +566,8 @@
                 <p></p>
                 <div class="row-fluid">
                     <div class="span6" style="width: 237px;float:left">
-                        <span style="float: left;margin-right: 10px">
-                            <img id="Useravatar" src="" style="height: 50px;width: 50px;border-radius:6px">
+                        <span class="img-extension" style="float: left;padding:5px 15px">
+                            <img id="Useravatar" src="">
                         </span>
                         <p id="usr_name"></p>
                     </div>

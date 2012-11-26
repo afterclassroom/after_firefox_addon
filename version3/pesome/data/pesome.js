@@ -1,4 +1,4 @@
-var loading_Image = '<img src="../img/loading.gif" />';
+var loading_Image = '<img src="../img/loading.gif" style="padding:250px 230px"/>';
 
 self.port.on("InitContent", function(response) {
     $('#main_panel').html(loading_Image);

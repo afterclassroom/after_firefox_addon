@@ -7,7 +7,7 @@ exports.main = function(options) {
     var activeUrl = "";
     var URL = 'http://localhost:3000';
     //var URL = 'http://dev.afterclassroom.com';
-//    var URL = 'http://pesome.com';
+    //    var URL = 'http://pesome.com';
 
 
 
@@ -86,6 +86,10 @@ exports.main = function(options) {
                 PesomeInit();
             }
         }).get();
+    });
+    after_panel.port.on("GotoLink", function(url) {
+        var tabs = require("tabs");
+        tabs.open(url);
     });
 
     after_panel.port.on("SubmitTick", function(params_arr) {

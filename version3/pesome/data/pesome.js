@@ -106,14 +106,24 @@ function PostLinkHandler(response){
     //END validation for valid form before submit
     });
     
-    //BEGIN link SIGNOUT handler
+    //BEGIN link handler
     var str_link =  $('#main_panel').find('.signout').attr('href');
     $('#main_panel').find('.signout').attr('href','javascript:;');
+    var mypost_link = $('#main_panel').find('.myTick').attr('href');
+    $('#main_panel').find('.myTick').attr('href','javascript:;');
+    var home_link = $('#main_panel').find('#linkto_classroom').attr('href');
+    $('#main_panel').find('#linkto_classroom').attr('href','javascript:;');
 
     $('#main_panel').find('.signout').click(function(){
         self.port.emit('SignOut', str_link);
     });
-    //END link SIGNOUT handler
+    $('#main_panel').find('.myTick').click(function(){
+        self.port.emit('GotoLink', mypost_link);
+    });
+    $('#main_panel').find('#linkto_classroom').click(function(){
+        self.port.emit('GotoLink', home_link);
+    });
+    //END link handler
 
     
     $('#main_panel').css('display','');

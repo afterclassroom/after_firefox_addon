@@ -5,8 +5,8 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-    var URL = 'http://localhost:3000';
-    //var URL = 'http://dev.afterclassroom.com';
+    //var URL = 'http://localhost:3000';
+    var URL = 'http://dev.afterclassroom.com';
     //    var URL = 'http://pesome.com';
 
 

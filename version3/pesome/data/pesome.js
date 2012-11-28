@@ -113,6 +113,8 @@ function PostLinkHandler(response){
     $('#main_panel').find('.myTick').attr('href','javascript:;');
     var home_link = $('#main_panel').find('#linkto_classroom').attr('href');
     $('#main_panel').find('#linkto_classroom').attr('href','javascript:;');
+    var original_link = $('#main_panel').find('#link').attr('href');
+    $('#main_panel').find('#link').attr('href','javascript:;');
 
     $('#main_panel').find('.signout').click(function(){
         self.port.emit('SignOut', str_link);
@@ -122,6 +124,9 @@ function PostLinkHandler(response){
     });
     $('#main_panel').find('#linkto_classroom').click(function(){
         self.port.emit('GotoLink', home_link);
+    });
+    $('#main_panel').find('#link').click(function(){
+        self.port.emit('GotoLink', original_link);
     });
     //END link handler
 

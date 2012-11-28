@@ -5,7 +5,7 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-//    var URL = 'http://localhost:3000';
+    //var URL = 'http://localhost:3000';
     var URL = 'http://dev.afterclassroom.com';
     //    var URL = 'http://pesome.com';
 
@@ -95,12 +95,13 @@ exports.main = function(options) {
     after_panel.port.on("SubmitTick", function(params_arr) {
         var Request = require('request').Request;
         Request({
-            url: params_arr[3],
-            content: {
-                classroom_ids: params_arr[0].toString(),
-                tags: params_arr[1],
-                title: params_arr[2]
-            },
+            url: params_arr[0],
+            content: params_arr[1],
+//            content: {
+//                classroom_ids: params_arr[0].toString(),
+//                tags: params_arr[1],
+//                title: params_arr[2]
+//            },
             onComplete: function (response) {
                 //TODO:: hide panel
                 //after_panel.hide();

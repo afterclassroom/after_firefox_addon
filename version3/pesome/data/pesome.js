@@ -82,21 +82,23 @@ function PostLinkHandler(response){
     $('#main_panel').find('#send_bt').click(function(){
         //BEGIN validation for valid form before submit
         if ( $('input[name="classroom_ids[]"]:checked').length > 0 ){
-            var cls_list = [];
+//            var cls_list = [];
             var params_arr = [];
-            $('input[name="classroom_ids[]"]:checked').each(function(i){
-                cls_list.push($(this).val());
-            });
-            var tags = $('#tags').val();
-            params_arr.push(cls_list);
-            params_arr.push(tags);
-
-            if ($('#main_panel').find('#title').val() != '' ){
-                params_arr.push($('#title').val());
-            } else {
-                params_arr.push("No title");
-            }
+//            $('input[name="classroom_ids[]"]:checked').each(function(i){
+//                cls_list.push($(this).val());
+//            });
+//            var tags = $('#tags').val();
+//            params_arr.push(cls_list);
+//            params_arr.push(tags);
+//
+//            if ($('#main_panel').find('#title').val() != '' ){
+//                params_arr.push($('#title').val());
+//            } else {
+//                params_arr.push("No title");
+//            }
             params_arr.push(str_action);
+            var values = $('#main_panel').find('#form_tick').serialize();
+            params_arr.push(values);
             //LOADING WAIT...
             $('#main_panel').html(loading_Image);
             self.port.emit('SubmitTick', params_arr);

@@ -5,8 +5,8 @@ var pp = function(o) {
 exports.main = function(options) {
     const data = require("self").data;
     var activeUrl = "";
-    //var URL = 'http://localhost:3000';
-    var URL = 'http://dev.afterclassroom.com';
+    var URL = 'http://localhost:3000';
+    //var URL = 'http://dev.afterclassroom.com';
     //    var URL = 'http://pesome.com';
 
 
@@ -14,7 +14,7 @@ exports.main = function(options) {
 
     var after_panel = require("panel").Panel({
         width: 565,
-        height: 620,
+        height: 565,
         contentURL: data.url("pages/index.html"),
         contentScriptFile: [data.url("jquery-1.7.1.min.js")
         ,data.url("pesome.js")

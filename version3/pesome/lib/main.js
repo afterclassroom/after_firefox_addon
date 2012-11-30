@@ -7,7 +7,7 @@ exports.main = function(options) {
     var activeUrl = "";
     var URL = 'http://localhost:3000';
     //var URL = 'http://dev.afterclassroom.com';
-    //    var URL = 'http://pesome.com';
+    var URL = 'http://pesome.com';
 
 
 

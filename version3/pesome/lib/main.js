@@ -20,6 +20,7 @@ exports.main = function(options) {
         ,data.url("pesome.js")
         ,data.url("select2.js")
         ,data.url("bootstrap-modal.js")
+        ,data.url("bootstrap-carousel.js")
         //        ,data.url("firefox_oauth2.js")
         
         ],

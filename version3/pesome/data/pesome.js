@@ -89,6 +89,16 @@ function PostLinkHandler(response){
         }
     });
     //END HANDLER for checkbox click and reclick
+    //BEGIN HANDLER FOR CAROUSEL
+    if ($('#main_panel').find("#images_carousel").length > 0){
+        var slider = $('#main_panel').find("#images_carousel")
+        .carousel({
+            interval: 5000000
+        }).bind('slid', function() {
+            $('#main_panel').find('#link_image').val($('#main_panel').find('div.carousel-inner div.active img').attr('src'));
+        });
+    }
+    //END HANDLER FOR CAROUSEL
 
     var str_action = $('#main_panel').find('#form_tick').attr('action');
     $('#main_panel').find('#send_bt').click(function(){
@@ -109,6 +119,7 @@ function PostLinkHandler(response){
             //                params_arr.push("No title");
             //            }
             //BEGIN handle checkbox No thumbnail
+            
             if ($('#main_panel').find('#fldcheckbox').is(':checked')) {
                 $('#link_image').remove();
             }
